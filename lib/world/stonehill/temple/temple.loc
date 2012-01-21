@@ -1,0 +1,61 @@
+location temple_sanc
+{
+	/* Object properties */
+	descr  =
+		"This is the temple sanctuary.  Here you can come to heal your\r\n"
+		"wounds or rest your tired body after a fight.\r\n";
+	short  = "Temple Sanctuary";
+
+	/* Location properties */
+	exit_s = temple_testroom;
+	exit_e = test_door;
+	exit_w = mainstreet9@main;
+
+	nomonster = true;
+}
+
+location temple_testroom
+{
+	/* Object properties */
+	descr  = "A simple room for testing.\r\n";
+	short  = "Temple Test Room";
+
+	/* Location properties */
+	exit_n = temple_sanc;
+}
+
+location temple_room2
+{
+	descr =
+		"This is another test room in the temple.\r\n"
+		"This one should have a door to the west.\r\n";
+	short = "Test room with a door";
+
+	exit_w = test_door;
+}
+
+door test_door
+{
+	alias    = "gate door";
+	dir1     = temple_sanc;
+	dir2     = temple_room2;
+	passdesc = "You pass the door.\r\n";
+	passfail = "You can not pass the door!\r\n";
+	isopen   = false;
+	lock     = test_lock;
+}
+
+lock test_lock
+{
+	alias  = "padlock lock";
+	locked = true;
+	key    = test_key;
+}
+
+key test_key
+{
+	long    = "A small key is lying here.\r\n";
+	short   = "the gatekey";
+	alias   = "gatekey key";
+	descr   = "The key looks like it could fit into a padlock.\r\n";
+}

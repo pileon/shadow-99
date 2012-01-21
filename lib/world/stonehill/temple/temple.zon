@@ -1,0 +1,7 @@
+zone temple
+{
+	long  = "The temple of two Gods";
+	place = { 1, test_key, temple_testroom };
+}
+
+#include "temple.loc"

@@ -1,0 +1,457 @@
+/********************************************************************
+* File: main/main.loc                             Part of Shadow-99 *
+*                                                                   *
+* This file is copyright (C) 1999, 2012 by Joachim Pileborg.        *
+* All rights reserved.  See COPYING for details.                    *
+*********************************************************************
+*
+* The main streets of the city of Stonehill.
+*
+********************************************************************/
+
+/* Main street */
+
+location mainstreet1
+{
+	short  = "Main street";
+	descr  =
+"This is the main street of Stonehill, and as such it is filled with\r\n"
+"people and animals.  Directly south of here is the city main gate.\r\n"
+"A high black tower is raising high above the roofs somewhere north,\r\n"
+"and another tower, this one all white, can bee seen to the north west.\r\n";
+
+	exit_n = mainstreet2;
+	exit_s = insidegate1;
+}
+
+location mainstreet2
+{
+	short  = "Main street";
+	descr  =
+"This is the main street of Stonehill, and as such it is filled with\r\n"
+"people and animals.  To the north and north west you see two towers\r\n"
+"raising, and to the south you see the city wall and the main gate.\r\n";
+
+	exit_n = mainstreet3;
+	exit_s = mainstreet1;
+}
+
+location mainstreet3
+{
+	short  = "Main street";
+	descr  =
+"This is the main street of Stonehill, and as such it is filled with\r\n"
+"people and animals.\r\n";
+
+	exit_n = mainstreet4;
+	exit_s = mainstreet2;
+}
+
+location mainstreet4
+{
+	short  = "Main street";
+	descr  =
+"This is the main street of Stonehill, and as such it is filled with\r\n"
+"people and animals.  Knowledge Road is to the west, while the main\r\n"
+"street continues north and south.\r\n";
+
+	exit_n = mainstreet5;
+	exit_s = mainstreet3;
+	exit_w = knowledge1;
+}
+
+location mainstreet5
+{
+	short  = "Main street";
+	descr  =
+"This is the main street of Stonehill, and as such it is filled with\r\n"
+"people and animals.\r\n";
+
+	exit_n = mainstreet6;
+	exit_s = mainstreet4;
+}
+
+location mainstreet6
+{
+	short  = "Main street";
+	descr  =
+"This is the main street of Stonehill, and as such it is filled with\r\n"
+"people and animals.\r\n";
+
+	exit_n = mainstreet7;
+	exit_s = mainstreet5;
+}
+
+location mainstreet7
+{
+	short  = "Main street";
+	descr  =
+"This is the main street of Stonehill, and as such it is filled with\r\n"
+"people and animals.  The street makes a east-south bend here.\r\n";
+
+	exit_e = mainstreet8;
+	exit_s = mainstreet6;
+}
+
+location mainstreet8
+{
+	short  = "Main street";
+	descr  =
+"This is the main street of Stonehill, and as such it is filled with\r\n"
+"people and animals.  The market place can bee seen east of here,\r\n"
+"and beyond that you see the castle.  To the north east you see the\r\n"
+"Temple of two Gods.\r\n";
+
+	exit_n = mainstreet9;
+	exit_w = mainstreet7;
+}
+
+location mainstreet9
+{
+	short  = "Main street";
+	descr  =
+"This is the main street of Stonehill, and as such it is filled with\r\n"
+"people and animals.  Some stairs are leading west into the temple.\r\n";
+
+	exit_n = mainstreet10;
+	exit_s = mainstreet8;
+	exit_e = temple_sanc@temple;
+}
+
+location mainstreet10
+{
+	short  = "Main street";
+	descr  =
+"This is the main street of Stonehill, and as such it is filled with\r\n"
+"people and animals.  The temple of two Gods can be seen to the\r\n"
+"south east, and a dark back alley is stretching out to the east.\r\n";
+
+	exit_n = mainstreet11;
+	exit_s = mainstreet9;
+	exit_e = backalley1;
+}
+
+location mainstreet11
+{
+	short  = "Main street";
+	descr  =
+"This is the main street of Stonehill, and as such it is filled with\r\n"
+"people and animals.  The sound of running water can be heard.\r\n";
+
+	exit_n = mainstreet12;
+	exit_s = mainstreet10;
+}
+
+location mainstreet12
+{
+	short  = "Main street";
+	descr  =
+"This is the main street of Stonehill, and as such it is filled with\r\n"
+"people and animals.  To the a long and high bridge is stretching over\r\n"
+"the river, and to the west is the Stonehill harbor.\r\n";
+
+	exit_n = onbridge1;
+	//exit_e = <harbor>;
+	exit_s = mainstreet11;
+}
+
+/*******************************************************************/
+
+/* Back alley */
+
+location backalley1
+{
+	short  = "Back alley";
+	descr  =
+"This is a small and dark back alley.  To the south you see the black\r\n"
+"walls of the temple.  The alley continues into darkness to the east,\r\n"
+"while the light from main street is seen to the west.\r\n";
+
+
+	exit_w = mainstreet10;
+	exit_e = backalley2;
+}
+
+location backalley2
+{
+	short  = "Back alley";
+	descr  =
+"This is a small and dark back alley.  It continues east and south.\r\n";
+
+	exit_w = backalley1;
+	exit_s = backalley3;
+}
+
+location backalley3
+{
+	short  = "Back alley";
+	descr  =
+"This seems to be a dead end.  To the west is the dark walls of the\r\n"
+"temple, and to the south is the base of The Tower of Sorrow.\r\n";
+
+	exit_n = backalley2;
+}
+
+/*******************************************************************/
+
+/* knowledge road and university park */
+
+location knowledge1
+{
+	short  = "Knowledge Road";
+	descr  =
+"This is the Knowledge Road, the way to the University.  Actually it\r\n"
+"is more of an avenue than a road.  To the east you see, and hear,\r\n"
+"the hustle and bustle of main street.  To the west, on the other hand,\r\n"
+"the peace and quiet of the university park can be seen.\r\n";
+
+	exit_e = mainstreet4;
+	exit_w = knowledge2;
+}
+
+location knowledge2
+{
+	short  = "Knowledge Road";
+	descr  =
+"Knowledge Road continues east and west.  To the west is the university\r\n"
+"park, while you can see the main street to the east.  North east of here\r\n"
+"you see the high walls of the university.\r\n";
+
+	exit_e = knowledge1;
+	exit_w = knowledge3;
+}
+
+location knowledge3
+{
+	short  = "Knowledge Road";
+	descr  =
+"All around you is the university park, quiet and calm.  To the north\r\n"
+"are the gates to the university, and to the east you Knowledge Road\r\n"
+"continues.\r\n";
+
+	exit_e = knowledge2;
+	exit_s = park1;
+	exit_w = park3;
+}
+
+location park1
+{
+	short  = "University Park";
+	descr  =
+"You are walking around in the peace and quiet of university park.\r\n"
+"Flowers, trees, insects and birds can be seen all around you in\r\n"
+"the green grass.\r\n";
+
+	exit_n = knowledge3;
+	exit_w = park2;
+}
+
+location park2
+{
+	short  = "University Park";
+	descr  =
+"You are walking around in the peace and quiet of university park.\r\n"
+"Flowers, trees, insects and birds can be seen all around you in\r\n"
+"the green grass.\r\n";
+
+	exit_e = park1;
+	exit_n = park3;
+}
+
+location park3
+{
+	short  = "University Park";
+	descr  =
+"You are walking around in the peace and quiet of university park.\r\n"
+"Flowers, trees, insects and birds can be seen all around you in\r\n"
+"the green grass.  One of the city gates is west of here.\r\n";
+
+	exit_e = knowledge3;
+	exit_s = park2;
+	exit_w = insidegate3;
+}
+
+/*******************************************************************/
+
+/* city walls and gates */
+
+/* main gate */
+
+location insidegate1
+{
+	short  = "Inside of Main gate";
+	descr  =
+"You are standing inside the main gates of Stonehill.  The ongoing traffic\r\n"
+"is very intensive, with people and carriages moving either north to the\r\n"
+"main street or south to the outside.  A portal leads east into the guard-\r\n"
+"room, and a door is mounted in the west wall.\r\n";
+
+	exit_n = mainstreet1;
+	exit_e = guardroom1;
+	exit_s = outsidegate1;
+	exit_w = storage1;  // TODO:  have a door
+}
+
+location outsidegate1
+{
+	short  = "Outside the main gates";
+	descr  =
+"You are standing on a road outside the main gates of Stonehill.\r\n"
+"The traffic in and out of the gate is pretty high.  The road goes\r\n"
+"south, where you can see a forest in the far distance, and north into\r\n"
+"the city.\r\n";
+
+	exit_n = insidegate1;
+}
+
+
+location storage1
+{
+	short  = "Storage room";
+	descr  =
+"This is just a simple storage room for the city guards.  A doorway to\r\n"
+"east leads out of here.\r\n";
+
+	exit_e = insidegate1;  // TODO:  have a door
+}
+
+location guardroom1
+{
+	short  = "Guard room";
+	descr  =
+"This is the place where most of the guard spend their time when not\r\n"
+"on active duty or on patrol.  Being that guards normally aren't the most\r\n"
+"nice and good people, this room is a mess.  The table in the middle of\r\n"
+"the room is full of dirty cups and jars.  The floor haven't been cleaned\r\n"
+"for quite some time, and a foul smell  is in the air.  A portal in the\r\n"
+"west wall leads out to the inside of the gate, and a door leads north.\r\n";
+
+	exit_w = insidegate1;
+	exit_n = captainsoffice1;
+}
+
+location captainsoffice1
+{
+	short  = "Captains Office";
+	descr  =
+"This is the office where the captain of the city guards works.  Although\r\n"
+"this is not the cleanest room you have seen, it is very clean and tidy\r\n"
+"compared to the guards room.  A door in the south wall leads back into\r\n"
+"the guards room.\r\n";
+
+	exit_s = guardroom1;
+}
+
+/* norhtern gate */
+
+location insidegate2
+{
+	short  = "Inside of the north gate";
+	descr  =
+"You are standing inside the north gate.  To the south is a marketplace,\r\n"
+"and further south you can see the harbor.  You can also head north,\r\n"
+"to outside the city walls.\r\n";
+
+	exit_n = outsidegate2;
+	exit_s = marketsquare2;
+}
+
+location outsidegate2
+{
+	short  = "Outside the north gates";
+	descr  =
+"You are standing in a field right outside the north gates of Stonehill.\r\n"
+"A bit west of here you see a ferry station at the river bank.  Further\r\n"
+"west you see a hill with as stone formation.\r\n";
+
+	exit_s = insidegate2;
+}
+
+/* west gate/park gate */
+
+location insidegate3
+{
+	short  = "Inside of Park gate";
+	descr  =
+"You are inside the small Park gate.  The park itself is to the east, and\r\n"
+"to the west you see a field outside the gate.\r\n";
+
+	exit_e = park3;
+	exit_w = outsidegate3;
+}
+
+location outsidegate3
+{
+	short  = "Outside the Park gate";
+	descr  =
+"You are in a field outside the small Park gate.  An exit in the tower\r\n"
+"leads into the city, and a small path leads west.  Far away to the\r\n"
+"west you see a hill with a stone formation on it, and it seems like\r\n"
+"the path is going in that direction.\r\n";
+
+	exit_e = insidegate3;
+}
+
+/*******************************************************************/
+
+/* all other locations */
+
+location marketsquare2
+{
+	short  = "Market square";
+	descr  =
+"This is a market place right north of the harbor.  To the north you\r\n"
+"see one of the city gates, and to the west you see a large bridge over\r\n"
+"the river.\r\n";
+
+	exit_n = insidegate2;
+	exit_w = belowbridge;
+}
+
+location belowbridge
+{
+	short  = "Below the bridge";
+	descr  =
+"You are standing just a the north foot of the large bridge, which is\r\n"
+"stretching out to the south.  To the southwest you see the Stonehill\r\n"
+"harbor, and to the west you see a market square.\r\n";
+
+	exit_e = marketsquare2;
+	exit_s = onbridge3;
+}
+
+location onbridge1
+{
+	short  = "On the bridge";
+	descr  =
+"You are on the large bridge over the river.  The main street is to the\r\n"
+"south, and the bridge continues up to the north.\r\n";
+
+	exit_s = mainstreet12;
+	exit_n = onbridge2;
+}
+
+location onbridge2
+{
+	short  = "On the bridge";
+	descr  =
+"As you stand on the highest point of the bridge, the view over the\r\n"
+"harbor (and big parts of the city) is magnificent.  The river is\r\n"
+"about 30 meters below you.  The bridge continues north and south.\r\n";
+
+	exit_n = onbridge3;
+	exit_s = onbridge1;
+}
+
+location onbridge3
+{
+	short  = "On the bridge";
+	descr  =
+"You are on the large bridge over the river.  You can cross the bridge\r\n"
+"if you go south, or leave it by going north.\r\n";
+
+	exit_n = belowbridge;
+	exit_s = onbridge2;
+}
+
+/*******************************************************************/

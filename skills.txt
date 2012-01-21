@@ -1,0 +1,119 @@
+Stats:
+ strength,
+ inteligence,
+ wisdom,
+ dexterity,
+ constitution,
+ charisma,
+ luck,
+ ego
+
+----------------------------------------------------------------------
+
+Skills (and also spells) can have one dependancy.  A character must have
+another skill/spell before he can have this spell/skill.
+The level of some of these skills depends on certain stats, agility depends
+much on the characters dexterity for example.
+
+
+All guilds:
+ spellcasting,
+ agility,
+ reading,
+ writing
+
+Warrior:
+ body knowledge,
+ basic weapon knowledge,
+ using daggers and knives,
+ using axes,
+ using swords,
+ scroll reading,
+ mounted fight,
+ unarmed fight,
+ martial arts,
+ pary,
+ dodge,
+ weapon crafting,
+ armour crafting,
+ armours,
+ guarding,
+ archery
+
+Thief:
+ body knowledge,
+ basic weapon knowledge,
+ using daggers and knives,
+ martial arts,
+ pary,
+ dodge,
+ guarding,
+ guards,
+ poisons,
+ diplomacy,
+ keys and locks,
+ stealing,
+ stealth,
+ languages,
+ world history,
+ myths and tales,
+ valuables,
+ antuiques
+
+Ranger:
+ basic weapon knowledge,
+ using axes,
+ using swords,
+ mounted fight,
+ pary,
+ dodge,
+ guarding,
+ archery,
+ plants and trees,
+ basic herb knowledge,
+ animals,
+ tracking and hunting,
+ signs of nature,
+ using staffs
+
+Mage:
+ basic weapon knowledge,
+ the art of magic,
+ elements,
+ basic spells,
+ intermediate spells,
+ advanced spells,
+ dark spells,
+ power scrolls
+
+Druid:
+ basic weapon knowledge,
+ plants and trees,
+ basic herb knowledge,
+ advanced herb knowledge,
+ tracking and hunting,
+ signs of nature,
+ potion making,
+ shapeshifting,
+ sorcery,
+ light rites,
+ dark rites,
+ chants,
+ creature calling,
+ using staffs
+
+Priest:
+ basic weapon knowledge,
+ diplomacy,
+ languages,
+ world history,
+ myths and tales,
+ world history,
+ myths and tales,
+ chants,
+ miracles,
+ medecine,
+ healing,
+ storytelling,
+ prayers,
+ blessings

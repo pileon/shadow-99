@@ -1,0 +1,511 @@
+No races.
+Classes: Warrior, Ranger, Thief, Wizard, Druid, Priest
+
+Druid's are good at potions and herbs, the know some magic.
+Friars are good healers, and can pray for wonders.
+Rangers are good trackers and know some things about herbs and plants.
+Thief's are sneaky people, good at dirty tricks while fighting.
+Warriors are big strong guys, good at swinging a sword, or two.
+Wizards are small weak types, but they can cast big and bad spells.
+
+Favorite weapons:
+    Warriors: Swords and axes
+    Thiefs  : Daggers and knives
+    Rangers : Short swords or bow and arrow
+    Wizards : Prefers not to use weapons
+    Druids  : Staff swinging
+    Priests : Prefers not to use weapons
+
+Character attributes:
+    Strength,
+    Intelligence,
+    Wisdom,
+    Dexterity,
+    Constitution,
+    Charisma
+
+Primary attributes:
+    Warriors: Strength
+    Thiefs  : Dexterity/Charisma
+    Rangers : Constitution
+    Wizards : Intelligence
+    Druids  : Wisdom
+    Priests : Wisdom/Intelligence
+
+Attributes and abilities range from 0 (min) to 100 (max).
+
+
+Character Generation
+--------------------
+The first thing a user does, after confirming his name, is to select gender.
+Then the character attributes, abilities and appearance is rolled.  This
+rolling phase can be redone until the player is satisfied.  Players do not
+pick a class until they are in the game, when they must find the guild of
+the class they want to be, and join the guild.  Of course, players can choose
+to not join a guild, and train their abilities and attributes themselves.
+
+Abilities rolled includes things such as:
+  agility (depends on dexterity)
+  reading (depends on intelligence)
+  writing (depends on intelligence)
+  spell casting
+
+Other things rolled on character creation:
+  wealth
+  appearance
+  age
+
+When a character is created, it is equipped with some (random) equipment,
+and are given a random amount of money.  The age of the character is rolled
+between 15 and 19.  For characters with high spell-casting ability, will get
+low knowledge in one or more random spells.  See the following table for how
+the spells are distributed.
+
+Spell-casting | # spells | Spell level
+-------------+----------+------------
+    100      |     5    |     10%
+     90      |     4    |      8%
+     80      |     3    |      6%
+     70      |     2    |      4%
+     60      |     1    |      2%
+
+
+Guilds
+------
+All classes have different guilds.
+The priest guild is, of course, in the temple.  The Warrior Guild is in the
+castle.  The Rangers guild is outside the city walls, so is the Druids guild.
+The Wizards have their guild in their part of the University.  The Thiefs
+guild is at a secret place.
+
+
+Skills and Spells
+-----------------
+The spells and skills can be though of like a tree.  At the root you have your
+innate abilities, and at the leaves are the actual spells and skills.
+
+Warriors
+  Body Knowledge
+  Basic Weapon Knowledge
+  Daggers & Knives
+  Axes
+  Swords
+  Archery
+  Scroll Reading
+  Mounted Fighting
+  Unarmed Fighting
+  Martial Arts
+  Protect Yourself
+  Craft Your own Weapon
+  Craft Your own Armour
+  Guarding
+
+Thiefs
+  Daggers & Knives
+  Body Knowledge
+  Modern Poisons
+  Diplomacy
+  The Prisons of Today
+  Keys and Locks
+  Stealing
+  Stealth
+  Languages
+  Myths and Tales
+  World History
+  Martial Arts
+  Antiques
+  Valuable Things
+  Guards
+
+Rangers
+  Plants and Trees
+  Basic Herb Knowledge
+  The Animal Nature
+  Tracking and Hunting
+  Basic Weapon Knowledge
+  Archery
+  Swords
+  Reading the Signs of Nature
+
+Wizards
+  The Art of Magic
+  The Elements and You
+  Basic Spell Knowledge
+  Intermediate Spell Knowledge
+  Advanced Spell Knowledge
+  The Power of Scrolls
+  Chants
+  Dark Spells
+  Simple Weapon Training
+
+Druids
+  Plants and Trees
+  Basic Herb Knowledge
+  Potion Making
+  Advanced Herb Knowledge
+  The Animal Within
+  The Animal Nature
+  Chants
+  Basic Sorcery
+  The Signs of Nature
+  The Power of Scrolls
+  Light Rites
+  Dark Rites
+  Creature Calling
+  Simple Weapon Training
+
+Priests
+  The Wonder of Miracles
+  Basic Medical Knowledge
+  Body Knowledge
+  Modern Poisons
+  Healing
+  Chants and Songs
+  Surgery
+  Story telling
+  Myths and Tales
+  World History
+  The Power of Belief
+  Useful Prayers
+  Blessings
+  Simple Weapon Training
+
+
+==============================================================================
+==============================================================================
+
+                       .---------.
+                     .-|  Harbor |
+                     | `---------'
+                .----+---.
+                | Temple |
+                +----+---+--------.
+                | Market + Castle |
+                `----+---+--------'
+    .------------.   |
+    | University +---'
+    `------------'
+
+
+==============================================================================
+==============================================================================
+
+    Stonehill
+    ---------
+
+==============================================================================
+
+The city of Stonehill.
+
+The city of Stonehill, is placed on a hill, next to an old and mystic stone
+formation.  It is quite big, and is the capital of ???.  It is also the
+academic and religious center in this part of the world.
+
+At the top of the hill, and dominating the city, lies the Temple of the two
+Gods, the city's oldest building.  Next to the temple lies the royal castle,
+home and court of king Beregund XXVII.  The castle is quite old, around one
+thousand years or so.  In the north-west corner of Stonehill, near the city-
+walls, lies the University.
+
+Trough the north-east end of Stonehill floats the Stonehill river.  At the
+river is the harbor, the most important trading place in the city.  Even
+though the river is not very big, it is still one of the most important trade-
+routes through the continent.
+
+
+==============================================================================
+
+Mad Orwell.
+
+It is unclear how Stonehill came into existence, but reading the Book of Ages
+at the university reveals the following story.
+A long time ago, a Sheppard named Orwell, had his small hut and home near to
+the stones.  After not being heard of for several weeks, Orwells employer
+(a farmer named Jorge Hamson) went to the hill to search for Orwell.  Jorge
+found Orwell sitting in his hut, more or less as a drooling madman, holding
+a book.  Orwell claimed he had solved the mystery of the stones, and that he
+had written it down in the book.  Many people came to listen to Mad Orwell,
+as he now was called, and after some time a small village grew up around
+him, and the village soon grew into a city.  When Orwell died, on new years
+day on what then became year 0, his followers buried him, and then built a
+church around the grave.  Deep down in the Temple of two Gods, in what is
+called Orwells Crypt, there lies a large stone-plate that is said to be
+Orwells grave.  As with all tales and myths, none of this have ever been
+confirmed, and the book Orwell is said to have written have never been found.
+
+==============================================================================
+
+The mysterious stones.
+
+There are a total of twelve stones in the formation.  One center stone, five
+stones placed in a circle around the center stone, three stones in a line to
+the southwest, and three stones in a line to the northeast.  The circle is
+around ten meters in diameter.  The center stone, which is also the highest,
+has a sculpture of a large raven facing north at the top.  All the stones are
+around three meters high, except the center stone which is five meters high.
+All the stones are of some black material not found anywhere around Stonehill.
+On the stones are strange carvings, runes and pictures.  Many carvings looks
+like ravens.  Many people have tried to solve the mysteries of the stones, but
+none have succeeded.  There does however exist a myth that a man called Mad
+Orwell have succeeded to solve the mystery, but no evidence of that have ever
+been found.
+
+
+==============================================================================
+
+The royal court:  [rename to something more appropriate]
+
+King Beregund XVII, son of Agarond III, was named after Beregund Dragon
+Slayer, founder of the Helokain dynasty.  To understand the court today, you
+need to know how Arnold Eiskilson became Beregund 'Dragon Slayer' Helokain.
+In the year 1738, a giant dragon moved into cave not to far from the city.
+Not soon there after, the dragon demanded sacrifices from the city inhabitants.
+King Ungold the Old sent out his knights to fight the dragon, but to no
+prevail.  Finally, after twenty years of terror from the dragon, the king
+marched out with an army to kill the dragon.  That failed, and the king was
+killed together with the whole army.  Leaving no heir to the throne, the
+nobles started to fight each other to put themselves on the throne.  Two hundred
+years later, the land was torn apart by the raging armies and the fierce
+dragon.  One day, the dragon burned down a farm, only leaving one survivor;
+Arnold Eiskilson.  After he buried his family, he swore that he would not rest
+until the dragon was dead.  So, the young Arnold set forth in the trail of the
+dragon.  Not much is known about his travels, but he managed to gather a
+following from all corners of the world.  There was Xiang Pieng from the far
+east, the sorceress Anna Bjorkdottir from the north, Abuhla Kahnosh from the
+south, and a giant quiet man from the west only known as Floating Wind.  Also
+following him was a dwarf from the mines of Oskothch, a giant from Wryxtia,
+and a troll from... well, only trolls can pronounce the name of that place.
+After one of Arnolds travels, he came back riding on a giant night-black
+horse, with no known name.  Arnold always carried on a large black sword,
+and it is told that the sword was taken from a mighty wizard who had crafted
+it many hundred years ago from a stone that fell from the sky.  The stories
+about Arnold and his company are many, and they traveled far and wide, not
+only in search of the dragon, but also helping other people to get rid of
+monsters and evil wizards.  One day, after many years of travel and questing,
+the party finally found the dragons cave.  They entered the cave, and did not
+come out until a week later, most of them badly hurt.  It is not known what
+happened to the dragon, but since they sealed the entrance and placed the
+giant to guard the sealing, the dragon may still be in there alive.  It is
+told that this was the place that now is called Giants seal, where a stone
+formation resembling a giant man can be found.  By now, more people started
+to follow Arnold and his party, until he finally had a whole army.  And
+people begun to beg him to stop the age-old civil war.  And so he did, until
+he had conquered all baronies and all counties.  At that point he changed
+name to Beregund Helokain, and proclaimed himself as king and protector of
+???.
+[Story about how he found a queen?]
+
+
+==============================================================================
+
+Dragon Castle.
+
+It is said that the first castle built in Stonehill, was only a garrison for
+the temple.  In 1872 Beregund Helokain, then known by his real name Arnold
+Eiskolson, moved into the garrison with his army, and said he was going to
+end the civil war that has been fought for over a century.  When the war was
+over, and Beregund proclaimed king (in the year 1879), he started to extend
+the garrison into a castle for himself.  The castle was finished just a few
+months before Beregunds death in 1923, and Beregund was buried in a crypt in
+the castle chapel.  Unlike many other castles, Dragon Castle (so named after
+Beregunds deeds as a dragon slayer) has not been rebuilt much since then.
+The only exception to that is the Tower of Sorrow, which was started by
+Beregunds great grandson Aalrik the sad in 2018.  The plans for this tower
+was at the grand scale.  Over 100 meters high, and with a base over 50
+meters in diameter, and all built with snow-white stones.  However, after
+a fire during the building of the tower (where Aalrik lost his whole family
+except one daughter) when the tower was almost finished, the tower fell.
+Aalrik decided that the tower should be rebuilt using the black and sooty
+stones from the old tower, as a reminder of the great loss of so many lives.
+The reconstruction of the tower after the fire 2033 did only progress very
+slowly, and and was not finished until 2097, a long time after Aalriks to
+early death in 2039.
+Not much have happened with Dragon Castle since then, but there are stories
+about hidden passages and secret tunnels between the castle and both the
+temple, the university, and outside the city walls.
+
+
+==============================================================================
+
+The University.
+
+In the year 127, the Plain Emperor Julius II together with the High Priest of
+the Two Gods founds the University.  Although the University is independent
+of the church, its primary goal is to serve as an educational resort for the
+priest hood.  The University is the first place for higher education in all the
+known world, and the university of Arkham wasn't founded until the year 201.
+Today the University has grown into a small city in the city, and it occupies
+nearly one fifth of the size of Stonehill.
+
+
+==============================================================================
+
+The Temple of two Gods and Religion.
+
+The myth says that a man now called Mad Orwell deciphered the mysterious
+stones outside Stonehill.  When he died, his followers built a small temple
+around his grave.  During the years new buildings was added to the temple,
+until 1453, when it got the look it still got today.  All this rebuilding and
+reconstruction, has of course turned the temple into a giant maze of corridors
+and hallways.  There even exists parts that no man has been in for several
+centuries.  Many attempts to map the temple have failed, and some of the
+map makers have even  disappeared among the many cellars and towers.
+
+Deep inside the temple lies the so called Orwells crypt, where it is said
+Mad Orwell is buried.  This also the place where 'The Book of the Gods' is
+kept.  This book is a copy of the book Orwell wrote down his deciphering of
+the large stones and its runes.  Of course, the current book not a direct copy
+of the original book, but rather a copy of a copy of... well, you get it?
+This copy is believed to have been written the 12'th or 13'th century.  There
+are tales that the original book is still lying somewhere in the temple, but
+no one have ever found it.
+
+So what does 'The Book of the Gods' say?  It states that in the beginning
+there was two gods.  One brother, Alrung, and one sister, Sheelai.  After
+creating the world and all its creatures, including man, the two gods came
+into a fight on how to rule the world the created.  During this age long
+fight, their grudge against each other got a dark life on its own.  This new
+and evil creature started to turn man against man, and animal against animal.
+Finally it became so strong that it cracked the earth in two halves.  After it
+successfully cracked the world, it cried out a challenge to Alrung and
+Sheelai, and called itself Inglima, the earth cracker.  When Alrung and Sheelai
+heard the challenge and saw what had happened to the world, they decided to
+bury their grudge, literary.  They put the world back together, placing
+Inglima in the center, and sealed the world with a ring of magic stones.
+The stones outside Stonehill was the last part of the seal laid, and it's
+the place they decided that the should leave the world so it wouldn't be in
+the way if the started to fight again.  The also decided to watch over the
+world, and promised to return if the creature Inglima should get loose again.
+To be able to watch over the world, Alrung took his left eye and placed it in
+the sky, where it started to burn with an intense heat and light.  And Sheelai
+took her right eye and placed it in the sky where it froze colder than ice.
+They also created the ravens to watch over the humans and animals, and hold
+after the evil and dark creatures created by Inglima.
+Inglima has tried many times to escape from its prison in the center of the
+earth, resulting in earthquakes and volcanos.
+The book also says that the stones outside Stonehill is the last part of the
+seal remaining intact, and when they are destroyed Inglima is set free to once
+again spread chaos around the land, until Alrung and Sheelai returns to once
+more imprison Inglima.
+
+Stonehill has been the religious capital of the western world since the
+year 89.  Soon the priest hood had grown so strong that neither Shalua Shacun
+nor Ziang Tsipau could close the Temple of Two Gods.  However, in 817 under
+the dictatorship of Eizo Shin in the so called bloody week, almost the whole
+priest hood is killed and the temple is closed.  This marks the beginning of
+the end of Eizo Shins days as king, and in 818 he is hanged by a raging
+crowd outside the reopened temple.  In 938, when raiding barbarian parties
+from the north is pretty usual, the high priest of the Two Gods decides to
+send missionaries to the northern countries.  The first years, many
+missionaries was killed, but since Arn Folkesson, leader of one of the larger
+tribes, converted in 952 more and more tribes convert to the Two Gods.
+In 998,  after the invasion of Karl Sveningsson, Stonehill is declared
+official religious capital of the northern tribes.
+
+
+==============================================================================
+
+The geography.
+
+Stonehill is placed in the southeast corner of ???, next to the Stonehill
+river.  The stonehill river is the continents longest river, stretching from
+the Eagle mountain at the border of the desert in the south, and flows to the
+Dark Sea ocean in the north.  At the Eagle mountain also start the Green 
+forest, a light forest that follows the river almost to Stonehill.  At the
+southwest border lies the Shadow Gorge, a giant crack in the ground shaped
+like a crescent moon.  Northwest lies the Large plains, a sea of grass
+stretching from the ocean in the north to the Dark Woods in the south.  These
+plains are also the home of the Plain Empire.  The Dark woods lies as a
+borderline between the Shadow Gorge and the Large plains.  To the west of
+Stonehill lies a fertile hilly plain.  Following this plain is the west trade
+route that leads at least as far east as to the eastern empire.
+
+Along the west trade route to the east lies Hollow Mountains, home of the
+dwarves.  At the north end of the mountain-chain lies the White Mountain
+massive, the last known place where trolls and giants still live.  The chain
+ends at the south with Eagle Mountain.  Eagle Mountain also marks the northern
+end of the Sand Sea desert.  The trade route continues west to the western
+border of the Plain Empire, passing both Stonehill and Arkham, capital of the
+Plain Empire.
+
+
+==============================================================================
+
+
+A time line of the world:
+
+
+-125 : The Plain Empire is founded by Marcus Ark.
+ -62 : Orwell is born.
+ -19 : Orwell deciphers the stones.
+   0 : Orwell dies.  Building on The Temple of two Gods is begun.
+  89 : The Plain Emperor, Marcus III, is converted by the high priest
+       of the Two Gods.  Stonehill is declared religious capital of the
+       western world by the emperor.
+ 127 : The Plain Emperor Julius II together with the high priest of the
+       Two Gods founds the University.
+ 541 : Shalua Shacun invades ??? with his tribes.
+ 799 : Ziang Tsipau unites the eastern tribes, and is declared emperor
+       of the eastern empire.
+ 800 : Ziang Tsipau and his armies begins their conquest of the west.
+ 804 : The armies of Ziang Tsipau cross the borders of ???.
+ 807 : The eastern invasion comes to an abrupt halt outside Arkham, the
+       capital of the Plain Empire.  The eastern empire stretches from the
+       Ocean of Infinity in the east, to the capital of the Plain Empire in
+       the west.  From beyond Sand Sea in the south to the Black Ocean in the
+       north.  Its area is far bigger than the Plain Empire will ever get.
+ 813 : Ziang Tsipau dies in the battlefield at Arkum.
+ 814 : The Eastern empire falls apart during violent and bloody battles
+       between Ziang Tsipaus generals.
+ 815 : ??? is 'liberated' by Eizo Shin, one of Ziang Tsipaus generals.
+ 818 : A revolt, sponsored by the Plain Empire, throws out Eizo Shin.
+       A king loyal to the empire is placed on the throne.
+ 936 : Raids from the northern barbarians start to get common.
+ 996 : Karl Sveningsson, leader of one of the northern barbarian tribes,
+       invades.
+1053 : The Plain Emperor, Arthus Faleye, invades in an attempt to throw out
+       the barbarians.  The attempt fails.
+1055 : Artus Falceye makes another attempt to get rid of the barbarians.  This
+       one is successful.
+1058 : The Plain Empire doubles the taxes for citizens of ???.
+       Major riots get common, and ??? is on the edge of civil war.
+1059 : ??? is declared a kingdom of its own, but must still pay some taxes to
+       the Empire.  The Empire also still have troops in ???.
+1427 : Jarvis Smithers enters the throne.
+1429 : Jarvis Smithers negotiates away the taxes to the Plain Empire.
+       The number of troops the Empire have is also is also reduced.
+1536 : The last documented sighting of a raven.
+1738 : A dragon appears, and immediately starts to wreck havoc on the land.
+1739 : Ungold Smithers dies together with almost all remaining troops from the
+       Empire when trying to kill the dragon.  The nobles start to fight for
+       the throne.
+1844 : Arnold Eiskilson is born.
+1864 : Arnold Eiskilson family's farm is pillaged by troops belonging to one of
+       the nobles wanting the throne.  Young Arnold begin his travels to find
+	   the dragons cave.
+1865 : Arnold Eiskilson family is killed by the dragon.
+1879 : Arnold Eiskilson and his party finds the dragons cave, tries to kill
+       the dragon.  Waarhol, the giant, is left to guard the cave.
+1882 : Arnold Eiskilson unites the nobles and is crowned by the Plain Emperor
+       as king over ???.  Arnold takes the name Beregund Helokain.
+1923 : Beregund Helokain dies of old age.
+2018 : Aalrik Helokain starts construction of the White Tower.
+2033 : The White Tower is raged by fire, and is renamed to Tower of Sorrow.
+2039 : Aalrik Helokain dies at an age of 46.
+2097 : Tower of Sorrow is finished.
+2867 : One of the stones in the mysterious circle falls and cracks in an
+       earth quake.
+
+
+Current year is 2879.  (Aprox. 1300 "real world time".)
+Preparation for the Helokain millennium celebration have started.  Nobles are
+restless, so are the southern desert nomad's.  The Plain Emperor (ruler of the
+Great Plain and protector of the northern countries) is getting old and weak,
+and has no son or daughter to take over the throne.  The Plain Empire itself
+is also weak, for the first time this millennium.  This of course means that
+the land once more is threatened with civil war between nobles.  Rumors say
+that old dark and evil creatures are staring to appear.  There are also
+rumors about 
+
+
+==============================================================================

@@ -1,0 +1,23 @@
+The directory structure is as follows:
+
+.
+|-- <area #1>
+|   |-- <area file>.are
+|   |-- <zone #1>
+|   |   |-- <zone file>.zon
+|   |   |-- <all locations>.loc
+|   |   |-- <all items>.itm
+|   |   |-- <all monsters>.mon
+|   |   |-- <all shops>.shp
+|   |-- <zone #2>
+|   `-- <zone #3>
+|-- <area #2>
+|-- <area #3>
+|-- .
+|-- .
+|-- .
+`-- <area #n>
+
+
+This structure is not standardised or enforced.  It's just tailored to my own
+specific taste.

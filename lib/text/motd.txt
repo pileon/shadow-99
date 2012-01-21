@@ -1,0 +1,16 @@
+  Welcome to:
+                      S h a d o w - 9 9   1 . 0
+ -----------------------------------------------------------------------------
+
+ Remember that Shadow-99 is far from finnished!
+ Playing here might not very fun at the moment, but it will be better as
+ the number of areas and other players increase.  Please have patience!
+
+                                                                   / The Arrow
+
+ New features:
+
+   * Two new commands:
+       commands - Lists all commands available to you.
+       toggle   - List or set player settings.
+   * Abbreviations are coming in for some command parameters.

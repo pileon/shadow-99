@@ -1,0 +1,14 @@
+This directory contains the area and world files for the main city of
+Shadow-99:  The city of Stonehill.
+
+The city is divided into seven zones, each covering a small part of the
+city.  The castle, temple and university may divided into more zones if
+the need arises (dungeons, catacombs, and such).
+
+Castle    : The ??? castle, home of the royal court of the Beregunds.
+Temple    : The Temple of two Gods.
+University: The University.
+Harbour   : The harbour area along the river.
+Main      : The rest of the city; market places, city wall and such.
+Stones    : The hill with the mysterious stones.
+Outside   : The surrounding fields, forrest, and river.

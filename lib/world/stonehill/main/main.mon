@@ -1,0 +1,40 @@
+/********************************************************************
+* File: main/main.mon                             Part of Shadow-99 *
+*                                                                   *
+* This file is copyright (C) 1999, 2012 by Joachim Pileborg.        *
+* All rights reserved.  See COPYING for details.                    *
+*********************************************************************
+*
+* This file contains to monsters in the main part of the city.
+*
+********************************************************************/
+
+monster test_monster
+{
+	alias = "monster testmonster";
+	short = "a test monster";
+	long  = "A testmonster is standing here.";
+	descr = "This is a simple test monster.\r\n";
+}
+
+monster test_monster2
+{
+	alias    = "monster2 testmonster2";
+	short    = "another test monster";
+	long     = "Another testmonster is standing here.";
+	descr    = "This is another simple test monster.\r\n";
+	sentinel = true;
+}
+
+/*******************************************************************/
+
+monster gateguard
+{
+	alias    = "gateguard guard";
+	short    = "a gateguard";
+	long     = "A gate-guard is standing here, eyeing you suspiciously.";
+	descr    = "";
+	sentinel = true;
+}
+
+/*******************************************************************/

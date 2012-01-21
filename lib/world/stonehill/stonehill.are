@@ -1,0 +1,18 @@
+area stonehill
+{
+	/* Object properties */
+	long  = "The city of Stonehill";
+
+	/* Area properties */
+	author = "arrow";
+	rlname = "Joachim Pileborg";
+	email  = "shadow-99@pileborg.org";
+}
+
+//#include "harbour/harbour.zon"
+//#include "castle/castle.zon" 
+//#include "outside/outside.zon"
+//#include "stones/stones.zon"
+//#include "university/university.zon"
+#include "main/main.zon"
+#include "temple/temple.zon"

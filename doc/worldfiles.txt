@@ -1,0 +1,353 @@
+/********************************************************************
+* File: worldfiles.txt                            Part of Shadow-99 *
+*                                                                   *
+* This file is copyright (C) 1999, 2012 by Joachim Pileborg.        *
+* All rights reserved.  See COPYING for details.                    *
+********************************************************************/
+
+
+PREFACE
+
+    This files tries to describe the format for the files that make up the
+world of Shadow-99.
+
+
+CONTENTS
+
+1.  Introduction
+1.1.  Areas
+1.2.  Zones
+1.3.  Objects
+1.4.  Properties
+1.5.  General file format
+1.6.  The #include directive
+2.  The Area object
+3.  The Zone object
+4.  The Location object
+4.1.  The Door object
+4.2.  The Lock object
+4.3.  The Key object.
+5.  The Monster object
+6.  The Item object
+
+
+1.  Introduction
+
+    This section talks about objects and properties, and the general format
+of the world files.
+
+1.1.  Areas
+
+    The MUD world is divided into many different areas.  Each area can have
+its own look and feel.  Each area is then subdivided into one or more zones.
+
+1.2.  Zones
+
+    Zones are the part of the MUD that control things like resets (when
+items/monsters should re-pop), weather, and other such things.  Each zone is
+then divided into locations.
+
+1.3.  Objects
+
+    Objects is what the MUD world is made of.  Objects are such things as
+weapons, hammers, locations, monsters and players.
+
+1.4.  Properties
+
+    Each object in Shadow-99 has one or more properties.  These can be
+things like an items description when lying on the ground, monsters and
+players current hit-points, and so on.
+
+1.5.  General file format
+
+    The format is simple, and is used for all types of files and objects.
+The files are not case dependent (i.e. Arrow is the same as arrow, aRrOw and
+ARROW).  A world file can have any number of object, even zero.
+
+Objects are defined as this:
+
+<object type> <object name>
+{
+    <properties>
+}
+
+<object type> is the type of the object you want to define.  The following
+object types are available:
+
+      type   | description
+    ---------+------------------------------------------
+    area     | An area
+    zone     | A zone
+    location | A location, i.e. a room
+    monster  | A basic monster
+    item     | A basic item
+    door     | A door/portal in a location
+    lock     | A lock on a door
+    key      | A key for a lock
+
+
+Properties has the following format:
+
+<property name> = <property value>;
+
+The property names are dependant on the object type.
+The following value types can be used:
+
+       type   | description
+    ----------+-----------------------------------------
+    string    | A text string enclosed in "
+    integer   | An integer number
+    reference | A reference to another object
+    boolean   | A boolean true or false
+    flag      | A bitfield
+    tupple    | A tupple
+    tripple   | A tripple
+
+Tripples and tupples is a way to give properties two or three values in
+one assignment.
+Tupple format :  { <value 1> , <value 2> }
+Tripple format:  { <value 1> , <value 2> , <value 3> }
+Tupples and tripples are mostly used by the zone objects.
+
+Newlines in strings is the following four character sequence: \r\n
+Note that no word wrapping is done on strings, so remember to keep lines
+under 80 character (70-74 characters is the recomended value).
+
+Integer properties can have any value from -2147483649 to 2147483648.
+
+Reference properties can reference object in the same zone
+('prop = an_object;'), object in another zone ('prop = an_object@a_zone;'),
+or an object in another area ('prop = an_object@a_zone@an_area;').
+
+Boolean properties an have the values true, false, 0, or 1.
+
+All objects have some properties in common:
+
+    property |  type  | description
+    ------------------+-----------------------------------------------
+    short    | string | A short description or name of the object, name list
+    long     | string | A long description or name of the object
+    descr    | string | Some other description of the object
+
+Some objects doesn't use these properties at all.
+
+
+1.6.  The #include directive
+
+    World files can be split up into several files and subdirectories, but
+Shadow-99 wants one area per file, and one file per area.  This is solved
+with the #include directive.  The directive is used to 'include' other files
+into the main area file, so Shadow-99 thinks it is one file.
+
+Format:
+
+#include <filename>
+
+or
+
+#include "filename"
+
+If the filename is between '<' and '>', the MUD searches for the file from
+the base world directory (lib/world), otherwise the search is made from the
+directory the current file is in.
+
+
+2.  The Area object
+
+    The area object is actually nothing more than a placeholder for information
+about the creator of the area.
+
+Syntax:
+
+area <areaname>
+{
+}
+
+Properties:
+
+    property |  type  | description
+    ---------+--------+-----------------------------------------------
+    author   | string | The mudname of the area author
+    rlname   | string | The authors real name
+    email    | string | The authors email address
+    long     | string | Long name of the area
+
+
+3.  The Zone object
+
+
+Syntax:
+
+zone <name>
+{
+}
+
+Properties:
+
+    property |  type  | description
+    ---------+--------+-----------------------------------------------
+    long     | string | Long name of the zone
+    poptime  | intege | Time in minutes between zone resets
+    place    | tri/tup| Place an item or a monster somewhere
+    give     | tupple | Give an item to a monster
+    equip    | tripple| Equip an item on a monster
+
+The locate, give, and equip properties are a little special.
+
+    place - If this is a tripple, it places one object in another.
+            Format:  { <max count> , <object to place> [, <where>] }
+            Max count is the maximum number objects that is allowed in the
+            zone.  Object to place is a reference to the object that should
+            be loaded, it can be either a monster or an item.  Where is a
+            reference to a location, and is where the object should be placed.
+            If this property is a tupple, object to place must be an item,
+            and is given to the last monster placed.
+
+    give  - Gives an item to the last monster placed.
+            Format:  { <max count> , <item to give> }
+            Max count is the maximum number objects that is allowed in the
+            zone.  Item to give is a reference of the item to give away.
+
+    equip - Equip the last placed monster with an item.
+            Format: { <max count> , <item to equip> , <where to equip> }
+            Max count is the maximum number objects that is allowed in the
+            zone.  Item to equip is a reference of the item to equip the
+            monster with.  Where to equip is a number that tells the MUD
+            where to equip the item.  It can be one of the following values:
+
+            0 : Wield the item
+
+
+4.  The Location object
+
+Syntax:
+
+location <name>
+{
+}
+
+Properties:
+
+    property |  type   | description
+    ---------+---------+-----------------------------------------------
+    descr    | string  | The room description
+    short    | string  | The room title
+    exit_n   |reference| Exit north
+    exit_e   |reference| Exit east
+    exit_s   |reference| Exit south
+    exit_w   |reference| Exit west
+    exit_d   |reference| Exit down
+    exit_u   |reference| Exit up
+
+
+4.1.  The Door object
+
+Syntax:
+
+door <name>
+{
+}
+
+Properties:
+
+    property |  type   | description
+    ---------+---------+-----------------------------------------------
+    short    |  string | Name list, what the door can be called
+    passdesc |  string | Written to all that passes the door
+    passfail |  string | Written if someone can not pass the door
+    opendesc |  string | Description written when opening the door
+    closedesc|  string | Description written when closing the door
+    minlev   | integer | Minimum player level to be able to pass
+    lock     |reference| A lock for this door
+    item     |reference| Players must have this item to be able to pass
+    dir1     |reference|
+    dir2     |reference|
+    hidden   | boolean | If true, players can not see the exit
+    wizonly  | boolean | If true, only wizards can pass the door
+
+
+4.2.  The Lock object
+
+Syntax:
+
+
+lock <name>
+{
+}
+
+Properties:
+
+    property |  type   | description
+    ---------+---------+-----------------------------------------------
+    short    |  string | Lock name list
+    locked   | boolean | If true, the lock is locked on zone reset
+    key      |reference| Key to unlock this lock
+    nopick   | boolean | If true, this lock is unpickable
+
+
+4.3.  The Key object.
+
+Syntax:
+
+key <name>
+{
+}
+
+Properties:
+
+    property |  type   | description
+    ---------+---------+-----------------------------------------------
+    long     |  string | Displayed when key is lying on the ground
+    short    |  string | Namelist, what the key can be called
+    descr    |  string | Description when looked at
+
+
+
+5.  The Monster object
+
+Syntax:
+
+monster <name>
+{
+}
+
+Properties:
+
+    property |  type   | description
+    ---------+---------+-----------------------------------------------
+    short    |  string | Namelist, what the monster can be called
+    long     |  string | Description when standing in a room
+    descr    |  string | Description when looked at
+    maxhit   | integer | Max amount of hit points
+    maxman   | integer | Max amount of mana points
+    maxmov   | integer | Max amount of move points
+    reghit   | integer | The amount of hit points to regererate each tick
+    regman   | integer | The amount of mana points to regererate each tick
+    regmov   | integer | The amount of move points to regererate each tick
+    level    | integer | The monsters level
+    str      | integer | The strength stat
+    int      | integer | The inteligence stat
+    wis      | integer | The wisdom stat
+    dex      | integer | The dexterity stat
+    con      | integer | The constitution stat
+    cha      | integer | The charisma stat
+    luk      | integer | The luck stat
+    ego      | integer | The ego stat
+    sex      | integer | Sex of this monster, 0 = male, 1 = female, 2 = neutal
+
+
+6.  The Item object
+
+Syntax:
+
+item <name>
+{
+}
+
+Properties:
+
+    property |  type   | description
+    ---------+---------+-----------------------------------------------
+    long     |  string | Displayed when item is lying on the ground
+    short    |  string | Namelist, what the item can be called
+    descr    |  string | Description when looked at

@@ -1,0 +1,6 @@
+zone temple
+{
+	long   = "The temple of two Gods";
+}
+
+#include "test.wld"

@@ -1,0 +1,137 @@
+/********************************************************************
+* File: classes.txt                               Part of Shadow-99 *
+*                                                                   *
+* This file is copyright (C) 1999, 2012 by Joachim Pileborg.        *
+* All rights reserved.  See COPYING for details.                    *
+********************************************************************/
+
+class Socket
+------------
+The Socket class handles all low-level communication with the Internet.
+
+
+class TcpSocket : public Socket
+-------------------------------
+This is just a simple wrapper class around the Socket class.
+
+
+class TelnetSocket : public TcpSocket
+-------------------------------------
+The interface between a user and the internet.  This class has a simple
+state machine to handle all telnet commands.
+
+
+class Server
+------------
+This is the class that handles the MUD.  It has a list of all connections,
+the master socket, and the main loop.  Only one instance of this class is
+ever created.
+
+Member variables:
+    TcpSocket m_master;  - The master socket, this is where all users connect
+    short     m_port;    - Master port number
+    User     *m_users;   - Head of the user list
+    Object   *m_chars;   - Head of the character list
+    Object   *m_players; - Head of the player list
+    Object   *m_wizards; - Head of the wizard list
+    Object   *m_monsters;- Head of the monster list
+    Object   *m_locs;    - Head of the location list
+    Object   *m_items;   - Head of the item list
+    Object   *m_areas;   - Head of the area list
+    Object   *m_zones;   - Head of the zone list
+
+
+class User
+----------
+All connected players have an object of this class connected to him.
+This class handles all the internet communication.
+
+Member variables:
+    TelnetSocket *m_socket;  - This users internet connection
+    User         *m_next;    - Next user in the servers userlist
+    Object       *m_player;  - A pointer to the player this user have
+
+
+class Object
+------------
+This is the base class for all world classes.  No objects of this class
+should ever by instanciated.
+
+Member variables:
+    char   *m_descr;   - Object description
+    char   *m_short;   - Short name of the object
+    char   *m_long;    - Long name of the object
+    int     m_number;  - The objects virtual number
+    Object *m_parent;  - This objects parent in the object tree
+    Object *m_child;   - This objects first child
+    Object *m_sibling; - Next sibling of this object
+    Object *m_next;    - Next pointer for the server lists
+
+
+class Area : public Object
+--------------------------
+The MUD contains one or more areas in which the players play in.
+One area can contain zero or more zones through the m_child pointer.
+Areas don't have a parent.
+
+
+class Zone : public Object
+--------------------------
+Each area can have zero or more objects of this type as children.
+All locations are children of a Zone object.
+
+
+class Char : public Object
+--------------------------
+The basic character type.  Here we find data common to both players and
+monsters.
+
+Member variables:
+    Object *m_equipment; - The characters equipment (the inventory is stored
+                           as children of this object through m_child)
+    int     m_hitpts;  \
+    int     m_manapts;  | - The current amount of points
+    int     m_movepts; /
+    int     m_maxhit;  \
+    int     m_maxmana;  | - The maximum amount of points
+    int     m_maxmove; /
+    int     m_hitreg;  \
+    int     m_manareg;  | - The amount to regenerate each tick
+    int     m_movereg; /
+
+
+class Player : public Char
+--------------------------
+Each player connected are instanciated as objects of this class.
+
+Member variables:
+    User   *m_user;  - This players internet connection
+    Object *m_nextp; - Next player in the servers playerlist
+
+
+class Wizard : public Player
+----------------------------
+Each player that has reached wizard status are instanciated with this
+class instead of the Player class.
+
+Member variables:
+    Object *m_nextw; - Next wizard in the servers wizardlist
+
+
+class Monster : public Char
+---------------------------
+The basic monster.
+
+Member variables:
+    Object *m_nextm; - Next monster in the servers monsterlist
+
+
+class Location : public Object
+------------------------------
+A location (room) on the MUD.  Through the m_child pointer, both objects
+and characters can be in the location.
+
+
+class Item : public Object
+--------------------------
+The basic item.

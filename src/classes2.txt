@@ -1,0 +1,179 @@
+The MUD world is divided into several areas.  Each area constist of one or
+more zones.  All monsters, items, and monsters are local to the zones they
+are defined in.  No objects can be defined without a zone, and no zones can
+be defined without an area.
+Users are the interface between the network and the MUD.  A user can be in
+one of many states (playing, loging in, at the menu, etc.).
+Players are allways linked with a user, but a user may have no asociated
+player (if the user is logging in, for example).  The only exception is if
+the user disconnects while still in the playing state, in which case the
+players link to its user will be lost.
+
+
+class Server:
+  Handles initialisation, bootup and the main loop.
+
+  Class members:
+    m_users;    /* a list of all connected users */
+    m_chars;    /* a list of all character, including monsters */
+    m_areas;    /* a list of all loaded areas */
+    m_zones;    /* a list of all loaded zones */
+    m_objects;  /* a list of _all_ loaded objects */
+
+
+class User:
+  This class represents a user.  A user is the interface between the network
+  and the MUD objects.
+
+  Class members:
+    m_next;   /* link for the servers m_user list */
+    m_player; /* the player this user is connected to, may be NULL */
+    m_socket; /* the socket all communication goes through */
+    m_state;  /* what state the user is in (this is an enumeration) */
+
+
+class Object:
+  The basic mud-object.  This is an abstract base class.
+
+  Class members:
+    m_nexto;     /* link for the servers m_objects list */
+    m_next;      /* link for the zone object list */
+    m_children;  /* pointer to this objects first child */
+    m_sibling;   /* pointer to this objects next sibling */
+    m_parent;    /* pointer to this objects parent object */
+    m_name;      /* all objects have a name,
+                    it must be unique in each zone */
+    m_short;     /* short (display) name of the object */
+    m_long;      /* long (display) name of the object */
+    m_descr;     /* description of the object */
+    m_area;      /* pointer to area this object belongs to */
+    m_zone;      /* pointer to zone this object belongs to */
+    m_file;      /* name of the file where this object was loaded from */
+    m_line;      /* line number where this object was defined */
+
+
+class Area (inherits from Object):
+  The area object.  This class is only used as a container of area information.
+
+  Class members:
+    m_nexta;   /* link for the servers m_areas list */
+    m_author;  /* author MUD name */
+    m_rlname;  /* author "real-life" name */
+    m_rlemail; /* author "real-life" email address */
+    m_zones;   /* list of all zones belonging to this area */
+
+
+class Zone (inherits from Object):
+  The zone object.
+
+  Class members:
+    m_nextz;    /* link for the servers m_zones list */
+    m_next;     /* link for the areas zone list */
+    m_objects;  /* list of all objects belonging to this zone */
+
+
+class Character (inherits from Object):
+  The basic character object.  All data common for both players and monsters
+  are collected here.
+
+  Class members:
+    m_nextc;   /* link for the servers m_chars list */
+    m_curhit;  /* current amount of hit-points this character have */
+    m_curmov;  /* current amount of move-points this character have */
+    m_curman;  /* current amount of mana-points this character have */
+    m_maxhit;  /* max amount of hit-points */
+    m_maxmov;  /* max amount of move-points */
+    m_maxman;  /* max amount of mana-points */
+    m_reghit;  /* the amount of hit-points to regenerate each tick */
+    m_regmov;  /* the amount of move-points to regenerate each tick */
+    m_regman;  /* the amount of mana-points to regenerate each tick */
+    m_level;   /* all characters have a level */
+
+
+class Player (inherits from Character):
+  The player.  Each playing user has an instance of this class.
+  Player levels range from 0 to 100.
+
+  Class members:
+    m_user;  /* user object this player is linked to, may not be NULL
+                (well, it may, but only for linkdead players) */
+
+
+class Wizard (inherits from Player):
+  Wizards are players that has "won" the mud.  They are allowed to extend the
+  mud with new areas, and to lead manual quests.
+  Wizard levels range from 0 to 50.
+
+
+class ArchWizard (inherits from Wizard):
+  This class is an extension of the wizard class.  It is only used by MUD
+  administrators.  ArchWizards have extra commands that allow them to run
+  the MUD (like "shutdown", "disconnect", "ban", etc.).
+  ArchWizard levels range from 51 to 100.  Level 100 is reserved for the
+  special character Admin.
+
+
+class Monster (inherits from Character):
+  The basic, simple monster.  Wanders around by default.
+
+  TODO:  More monster types:  MonsterThief, MonsterMage, MonsterFighter, etc.
+
+
+class Location (inherits from Object):
+  A location (room) in the mud.
+
+
+class Item (inherits from Object):
+  The basic item, all other item types inherits from this class.
+
+  Class members:
+    m_equipped;  /* if this item is equipped, where
+                    (this is an enumeration) */
+
+  TODO:  More item types:  ItemContainer, ItemEdible, ItemWeapon, etc.
+
+======================================================================
+
+    World file format
+    -----------------
+
+The format of the world files is pretty simple.  Objects are defined, more or
+less, "as is", with properties and all.
+
+Object definitions:
+(Case is not used, so 'Area', 'aReA' and 'area' all means the same thing.)
+
+<object type> <name>
+{
+    <property name> = <property value> ;
+    <property name> = <property value> ;
+        .
+        .
+        .
+    <property name> = <property value> ;
+}
+
+The following object types exists so far:
+
+  * area    : A MUD area
+  * zone    : A zone in an area
+  * location: A location in the MUD
+  * monster : A standard monster
+  * item    : A generic item
+
+There are four types of property values: string, number, object and tupple.
+
+Strings are arbitrary text strings enclosed in double quotes (").
+
+Numbers are integer numbers, in the range -2*10^6 to 2*10^6.
+
+Objects are references of other objects, and can reference object on other
+zones than the one currently loading.  Referencing 'external' objects (objects
+in another zone), have the following format: <object> @ <zone> [ @ <area> ],
+where <object> is the objects name, <zone> is either the zone name, and <area>
+is the area the object is defined in.  The area part is optional if the object
+is defined in the same area as the current object loading.
+
+Tupples is a combination of two of the above value types.
+The format is:  { <value 1> , <value 2> }
+

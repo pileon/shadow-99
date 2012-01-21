@@ -1,0 +1,84 @@
+o Move logging into a separate thread (process?), that writes the text out
+  in chunks once every second or so?
+o Wordwrap all output?
+- Handcode the world-file parser?
+  - I will probably handcode the lexer, and we'll see about the parser part.
+  - Now the parser is handcoded, and it will probably stay that way.
+    The parser is enough flexible that it shouldn't need any further coding.
+o User the standard C preprocessor instead of my own in the lexer?
+  This allows world files to have macros and conditional compiling.
+o Create a three layered parser?
+    Layer 1:  The lexer, group a stream of characters into tokens.
+    Layer 2:  The preprocessor, gets tokens and preprocess them.
+    Layer 3:  The parser, gets tokens from layer two.
+- Deadlock/infinite loop protection.
+o Finish the TelnetSocket class!
+o Shared strings?  Reference counts on strings?
+o Make more use of macros and inline member functions to fetch/set
+  class members?  Now I have almost no get/set functions, most member variables
+  are public.
+o OLC
+o A separate player list?
+o Check the include list, both for multiple includes, and for inclusion
+  only when needed.
+o The saving of objects could be made much simpler:
+  All object properties are allready in a list, with pointers to the values.
+  Loop through this list and save the properties there?
+
+  Hmm... this is harder than it sounds.  First the old object must be removed
+  from the existing file, then it must be written out again, preferably at
+  the same place.  This approach might also discards all #include directives
+  and comments in the file.
+
+  I could use a special client for this, and use ftp for editing files.
+
+- Add colour to output.  The best place for this is probably at the User
+  write function.
+- Is the writing of the output queue safe?  Does it output the whole queue?
+o Make the skill, skillclass, and guild structures into classes?
+- Add 'abilities' (like spellcasint ability, etc.)  Or use skills for that?
+  Skills are now used for this.
+o Add generic functions to find items in a chars inventory/equipment,
+  items in a location, chars in a location, and chars/items in the MUD.
+- New stats:  Luck and Ego
+o A command that lists all users from the same site (same IP) as a specified
+  player?
+o A new thread (or process) that handles hostname and username lookups.
+o Put buffering a a lower level, under user?  (I.e. at the socket level.)
+  This allow us to do really advance telnet command parsing.
+  I could have buffering at both user and socket level?
+o class Postman : public Monster; A new class that handles mud-mail.
+o Make more use of C++ specific things, like templates and such?
+  This includes a string class, log functions turned into a class, bitfield
+  class, etc.
+o Properties as code!  This probably means I gotta change the property
+  handling.
+o Maybe have some sort of mob-progs instead?
+o More classes:
+    o class Shop : public Object;
+    o class ShopKeeper : public Monster;
+    o class Teacher : public Monster;  /* a monster teaching skills */
+    o class Master : public Teacher;   /* a guildmaster */
+    o class Container : public Item;
+    o class Weapon : public Item;
+    o class Armour : public Item;
+o More on_* triggers and callbacks in objects.  Like on_say and on_tell for
+  monsters. on_get, on_drop, on_give, and on_use for items. etc.
+o Two descriptions on objects, one for day and the other for night.
+o Players should be able to look at/examine doors and locks.
+  Also, players should be able to look in directions, and then see that
+  locations long description (m_long).  Or should there be one description
+  for each exit?
+o Extra descriptions for locations and items.
+o Flags for locations:
+    * LF_NOFIGHT
+    * LF_PERMDARK
+  Maybe use boolean properties for them?
+- A goto command.
+o A repop property in the Object class (needs a max repop counter also),
+  or as tupples in the zones?  As tuples in the zone might be better,
+  but that means I got to implement tupples.
+o Fix up the monster class!
+o A simple help command, that displays all available commands?
+  Maybe use a 'commands' command for that?
+o A 'toggle' command, to show and change player flags.

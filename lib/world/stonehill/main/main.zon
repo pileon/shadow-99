@@ -1,0 +1,12 @@
+zone main
+{
+	poptime = 1;
+	long    = "Stonehill, main streets";
+
+	place = { 2, test_monster , mainstreet9 };
+	place = { 2, test_monster2, mainstreet9 };
+	give  = { 1, test_key@temple };
+}
+
+#include "main.loc"  /* all locations */
+#include "main.mon"  /* all monsters */

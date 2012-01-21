@@ -1,0 +1,13 @@
+######################################################################
+# This file contains a list of all areas that should be loaded.      #
+# The areas must be listed one on each line, and the filename is     #
+# relative to the lib/world directory.  No spaces are allowed in the #
+# middle of paths.                                                   #
+# Everything following a '#' character, is considered a comment.     #
+######################################################################
+#
+
+stonehill/stonehill.are    # The main city of Shadow-99
+#testarea/test.are
+
+######################################################################
