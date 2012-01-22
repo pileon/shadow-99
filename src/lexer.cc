@@ -820,7 +820,8 @@ bool lex_pushfile(const char *fn, const char *dn, const char *dir)
 
 	if ((f->yyb = new char [f->yysz * 2 + 2]) == NULL)
 		out_of_memory();
-	f->yyp = f->yyb;
+
+	f->yyp = NULL;
 
 	f->prev  = yyfstack;
 	yyfstack = f;
