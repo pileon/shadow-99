@@ -1,4 +1,4 @@
-Shadow-99 is a MUD server and library that I started working on in 1999.
+Shadow-99 is a MUD server and library that I was working on in 1999.
 
 This server is very bare-bones! It do have movement and some communications
 commands implemented, as well as a (pretty complete) parser for the world
