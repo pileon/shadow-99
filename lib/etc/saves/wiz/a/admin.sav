@@ -1,0 +1,46 @@
+/* This is the savefile for archwiz admin, do not touch! */
+
+archwiz admin
+{
+	/* Object properties */
+	alias = "";
+	short = "";
+	long  = "";
+	descr = "";
+
+	/* Character properties */
+	curhit = 11;
+	curmov = 59;
+	curman = 61;
+	maxhit = 11;
+	maxmov = 59;
+	maxman = 61;
+	reghit = 2;
+	regmov = 4;
+	regman = 3;
+	level  = 100;
+	str    = 31;
+	wis    = 61;
+	int    = 22;
+	dex    = 27;
+	con    = 23;
+	cha    = 10;
+	luk    = 40;
+	ego    = 40;
+	sex    = 2;
+	age    = 20;
+
+	/* Character skills */
+	skill1   =  44;
+	skill2   =   7;
+	skill3   =  18;
+
+	/* Player properties */
+	rlname  = "";
+	email   = "";
+	passwd  = "adQsc3Vr/bIZ6";
+	npasswd = 0;
+	colour  = false;
+	host    = "localhost:-13154";
+
+}
