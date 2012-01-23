@@ -65,8 +65,8 @@ public:
 	/* functions to get info about the socket */
 	const char *get_ip(char *to, const size_t maxlen) const;
 	const char *get_host(char *to, const size_t maxlen) const;
-	short get_local_port(void) const;
-	short get_peer_port(void) const;
+	unsigned short get_local_port(void) const;
+	unsigned short get_peer_port(void) const;
 
 	bool is_blocking(void) const;
 	bool set_blocking(const bool on = true);

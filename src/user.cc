@@ -434,7 +434,7 @@ void User::s_getname(textnode *tn)
 	{
 		char s[128];
 		m_socket.get_host(s, 127);
-		snprintf(s + strlen(s), sizeof(s) - strlen(s), ":%d",
+		snprintf(s + strlen(s), sizeof(s) - strlen(s), ":%u",
 				 m_socket.get_peer_port());
 		if (m_player->m_host)
 			delete [] m_player->m_host;

@@ -45,7 +45,7 @@ Server::~Server()
 	{
 #if 1
 		char s[128];
-		log("   Closing connection to %s:%d\n", 
+		log("   Closing connection to %s:%u\n", 
 			u->m_socket.get_host(s, 127), u->m_socket.get_peer_port());
 #endif
 

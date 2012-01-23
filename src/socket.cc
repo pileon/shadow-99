@@ -370,7 +370,7 @@ const char *Socket::get_host(char *to, const size_t maxlen) const
 	return to;
 }
 
-short Socket::get_local_port(void) const
+unsigned short Socket::get_local_port(void) const
 {
 	if (!isopen() || !m_local)
 	{
@@ -401,7 +401,7 @@ short Socket::get_local_port(void) const
 	}
 }
 
-short Socket::get_peer_port(void) const
+unsigned short Socket::get_peer_port(void) const
 {
 	if (!isopen() || !m_peer)
 	{
