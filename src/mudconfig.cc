@@ -87,6 +87,7 @@ bool cfg_setdef(void)
 		"0:  Quit from Shadow-99!\r\n"
 		"1:  Enter Shadow-99!\r\n"
 		"2:  Read background story\r\n"
+		"3:  Change password\r\n"
 		"\r\n"
 		"Your choice: ";
 	/* If you add to, or change, the menu above, remember to update
