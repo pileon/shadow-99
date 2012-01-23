@@ -6,5 +6,4 @@ files. All the rest, like skills, spells, magic, fighting and almost every-
 thing else you expect from a MUD server still needs to be implemented.
 
 There is one administrative player, name "admin" with password "admin1".
-There is currently no way to change the password, so before putting up a MUD
-based on this code you should implement a way of chaning passwords.
+Change this password before putting up the MUD for public!

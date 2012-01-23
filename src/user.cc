@@ -771,11 +771,82 @@ void User::handle_input(void)
 			/* sub-menu states */
 		case S_READBKG:     /* reading the background story */
 			break;
+
 		case S_CHGPWD1:     /* changing password; enter old password */
+			/* make sure the entered password matches the existing password */
+			if (is_enter(tn))
+			{
+				m_state = S_MENU;
+				write(mudconfig.menu);
+			}
+			else
+			{
+				if (strcmp(m_player->m_passwd,
+						   crypt(tn->t, m_player->m_name)) != 0)
+				{
+					if ((++m_player->m_npasswd % 3) == 0)
+					{
+						write("\r\nTo many failures.\r\nThis event has been "
+							  "logged with your ip-address.\r\n");
+						log("Three password attempts from: %s (%s)\n",
+							m_player->get_name(), m_socket.get_host(b, 127));
+						m_state = S_CLOSE;
+					}
+					else
+						write("\r\nWrong password.\r\nYour old password: ");
+					m_player->save();
+				}
+				else
+				{
+					m_state = S_CHGPWD2;
+					write("\r\nEnter your new password: ");
+					m_socket.set_echo(true);
+				}
+			}
 			break;
+
 		case S_CHGPWD2:     /* changing password; enter new password */
+			if (is_enter(tn))
+			{
+				m_state = S_MENU;
+				write(mudconfig.menu);
+			}
+			else if (!pwd_is_valid(tn, m_player->m_name))
+			{
+				write("That is not a valid password here on %s.\r\n"
+					  "New password for your character: ", mudconfig.mudname);
+			}
+			else
+			{
+				m_player->m_passwd = STRDUP(tn->t);
+				m_state = S_CHGPWD3;
+				write("\r\nConfirm your new password: ");
+			}
 			break;
+
 		case S_CHGPWD3:     /* changing password; confirm new password */
+			if (is_enter(tn))
+			{
+				m_state = S_MENU;
+				write(mudconfig.menu);
+			}
+			else if (strcmp(tn->t, m_player->m_passwd) != 0)
+			{
+				write("Passwords does not match.\r\n"
+					  "New password for your character: ");
+				m_state = S_CHGPWD2;
+			}
+			else
+			{
+				delete [] m_player->m_passwd;
+				if ((m_player->m_passwd =
+					 STRDUP(crypt(tn->t, m_player->m_name))) == NULL)
+				{
+					out_of_memory();
+				}
+				m_state = S_MENU;
+				write(mudconfig.menu);
+			}
 			break;
 
 			/* all other states */
@@ -846,6 +917,11 @@ void User::menu_pick(const textnode *tn)
 		break;
 	case '2':  /* "2:  Read background story\r\n" */
 		page(mudconfig.bginfo);
+		break;
+	case '3':
+		write("\r\nEnter your old password: ");
+		m_state = S_CHGPWD1;
+		m_socket.set_echo(false);
 		break;
 	default:
 		write("Illegal choice.\r\n");
