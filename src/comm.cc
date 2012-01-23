@@ -173,7 +173,7 @@ void Server::comm_kick(void)
 			   p->m_next = u->m_next;
 
 #if 1
-		   log("Closing connection to: %s:%d\n",
+		   log("Closing connection to: %s:%u\n",
 			   u->m_socket.get_host(s, 127), u->m_socket.get_peer_port());
 #endif
 
@@ -213,7 +213,7 @@ void Server::comm_newcon(void)
 	m_users   = u;
 
 #if 1
-	log("New connection from: %s:%d\n",
+	log("New connection from: %s:%u\n",
 		u->m_socket.get_host(s, 127), u->m_socket.get_peer_port());
 #endif
 }
